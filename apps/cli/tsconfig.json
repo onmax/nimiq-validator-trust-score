@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "types": ["bun-types"],
+    "module": "ESNext",
+    "target": "ES2022",
+    "moduleResolution": "node",
+  }
+}
