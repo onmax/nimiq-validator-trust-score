@@ -2,13 +2,17 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "hono": "^3.9.2",
     "vts-core": "workspace:*"
   },
   "devDependencies": {
-    "bun-types": "^1.0.7"
+    "@antfu/eslint-config": "^1.1.1",
+    "bun-types": "^1.0.7",
+    "eslint": "^8.53.0"
   }
 }

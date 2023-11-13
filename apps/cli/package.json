@@ -2,7 +2,9 @@
   "name": "cli",
   "type": "module",
   "scripts": {
-    "dev": "bun run src/index.ts"
+    "dev": "bun run src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "vts-core": "workspace:*"

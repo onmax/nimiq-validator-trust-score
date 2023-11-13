@@ -1,7 +1,8 @@
-import { program } from "commander";
-import { greeting } from "vts-core"
+import { argv } from 'node:process'
+import { program } from 'commander'
+import { greeting } from 'vts-core'
 
-const file = await Bun.file('../../package.json').json();
+const file = await Bun.file('../../package.json').json()
 
 program
   .name('vts')
@@ -11,6 +12,7 @@ program
 program
   .command('greet')
   .description('Greet the user')
+  // eslint-disable-next-line no-console
   .action(() => console.log(greeting))
 
-program.parse(process.argv);
+program.parse(argv)

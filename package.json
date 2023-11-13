@@ -1,12 +1,14 @@
 {
+  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "bun@1.0.9",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev --no-cache --continue",
-    "lint": "turbo lint",
+    "lint": "turbo lint --",
+    "lint:fix": "turbo lint:fix --",
     "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter=docs^... && changeset publish"
@@ -16,12 +18,16 @@
     "@changesets/cli": "^2.22.0",
     "eslint": "^8.53.0",
     "eslint-config": "*",
-    "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "bun@1.0.9",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "bun lint-staged"
+  },
+  "lint-staged": {
+    "*": "turbo lint:fix --"
+  }
 }
